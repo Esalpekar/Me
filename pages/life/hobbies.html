@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Elliott Salpekar</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div id="canvas">
+        <header>
+            <div class="site-title">
+                <h1><a href="../../index.html">Elliott Salpekar</a></h1>
+            </div>
+            <div class="site-tagline">Math Student</div>
+            
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Bio</a></li>
+                    <li><a href="../school.html">School</a></li>
+                    <li class="nav-dropdown">
+                        <span class="dropdown-trigger">Projects</span>
+                        <div class="dropdown-content">
+                            <div class="dropdown-bracket"></div>
+                            <div class="dropdown-links">
+                                <a href="../projects/aixi.html">AIXI Approximator</a>
+                                <a href="../projects/backtesting.html">Custom Backtesting Engine</a>
+                                <a href="../projects/billing.html">Billing Data Prep</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <span class="dropdown-trigger">Life</span>
+                        <div class="dropdown-content">
+                            <div class="dropdown-bracket"></div>
+                            <div class="dropdown-links">
+                                <a href="gap-year.html">Gap Year</a>
+                                <a href="hobbies.html">Hobbies</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-content">
+                <!-- Cooking Section -->
+                <div class="hobbies-section cooking-section">
+                    <div class="hobbies-text">
+                        <h3>Cooking</h3>
+                        <p>"Eat to Live" and "Live to Eat" aren't mutually exclusive. Here are some highly saturated photos:</p>
+            
+                    </div>
+                    <div class="cooking-photos">
+                        <img src="../../assets/images/food_pics/cooking_1.jpeg" alt="Cooking photo 1" class="cooking-photo" data-caption="Summer Rolls" onclick="openCookingLightbox(0)">
+                        <img src="../../assets/images/food_pics/cooking_6.jpeg" alt="Cooking photo 2" class="cooking-photo" data-caption="Sushi" onclick="openCookingLightbox(1)">
+                        <img src="../../assets/images/food_pics/cooking_3.jpeg" alt="Cooking photo 3" class="cooking-photo" data-caption="Yam Tagine" onclick="openCookingLightbox(2)">
+                        <img src="../../assets/images/food_pics/cooking_4.jpeg" alt="Cooking photo 4" class="cooking-photo" data-caption="Plantain Shkmeruli" onclick="openCookingLightbox(3)">
+                    </div>
+                </div>
+
+                <!-- Section Divider -->
+                <hr class="section-divider">
+
+                <!-- Piano Section -->
+                <div class="hobbies-section piano-section">
+                    <div class="piano-videos">
+                        <iframe class="piano-video" src="https://www.youtube.com/embed/4uJUZhjBr3c" title="Piano Performance 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="piano-video" src="https://www.youtube.com/embed/p09J0g8-Uk4" title="Piano Performance 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="hobbies-text">
+                        <h3>Piano</h3>
+                        <p>Compositions and classical works. <p>
+                            <p>Here are a few recordings.</p>
+
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section Divider -->
+                <hr class="section-divider">
+
+                <!-- Running Section -->
+                <div class="hobbies-section running-section">
+                    <h3 class="title">Running</h3>
+                    <div class="running-text">
+                        <p>Nothing longer than a marathon. </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Lightbox for cooking photos -->
+    <div id="cooking-lightbox" class="lightbox" onclick="closeCookingLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img id="cooking-lightbox-image" src="" alt="">
+            <div id="cooking-lightbox-caption" class="lightbox-caption"></div>
+            <button class="lightbox-prev" onclick="previousCookingImage()">&#8249;</button>
+            <button class="lightbox-next" onclick="nextCookingImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for dynamic dropdown -->
+    <script src="../../assets/js/dropdown.js"></script>
+
+    <!-- JavaScript for cooking lightbox -->
+    <script>
+        const cookingImages = [
+            '../../assets/images/food_pics/cooking_1.jpeg',
+            '../../assets/images/food_pics/cooking_6.jpeg',
+            '../../assets/images/food_pics/cooking_3.jpeg',
+            '../../assets/images/food_pics/cooking_4.jpeg'
+        ];
+
+        const cookingCaptions = [
+            'Summer Rolls',
+            'Sushi',
+            'Yam Tagine',
+            'Plantain Shkmeruli'
+        ];
+
+        let currentCookingImageIndex = 0;
+
+        function openCookingLightbox(index) {
+            currentCookingImageIndex = index;
+            document.getElementById('cooking-lightbox-image').src = cookingImages[currentCookingImageIndex];
+            document.getElementById('cooking-lightbox-caption').textContent = cookingCaptions[currentCookingImageIndex];
+            document.getElementById('cooking-lightbox').style.display = 'block';
+        }
+
+        function closeCookingLightbox() {
+            document.getElementById('cooking-lightbox').style.display = 'none';
+        }
+
+        function nextCookingImage() {
+            currentCookingImageIndex = (currentCookingImageIndex + 1) % cookingImages.length;
+            document.getElementById('cooking-lightbox-image').src = cookingImages[currentCookingImageIndex];
+            document.getElementById('cooking-lightbox-caption').textContent = cookingCaptions[currentCookingImageIndex];
+        }
+
+        function previousCookingImage() {
+            currentCookingImageIndex = (currentCookingImageIndex - 1 + cookingImages.length) % cookingImages.length;
+            document.getElementById('cooking-lightbox-image').src = cookingImages[currentCookingImageIndex];
+            document.getElementById('cooking-lightbox-caption').textContent = cookingCaptions[currentCookingImageIndex];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Elliott Salpekar</title>
+    <meta name="description" content="Projects by Elliott Salpekar in data science, machine learning, and economics">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Adobe Fonts - Proxima Nova -->
+    <link rel="stylesheet" href="https://use.typekit.net/foobar.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div id="canvas">
+        <header>
+            <div id="upper-logo">
+                <div class="site-title">
+                    <h1><a href="../index.html">Elliott Salpekar</a></h1>
+                </div>
+            </div>
+            <div class="site-tagline">
+                <span>Math Student</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Bio</a></li>
+                    <li><a href="school.html">School</a></li>
+                    <li class="nav-dropdown">
+                        <span class="dropdown-trigger active">Projects</span>
+                        <div class="dropdown-content">
+                            <div class="dropdown-bracket"></div>
+                            <div class="dropdown-links">
+                                <a href="projects/aixi.html">AIXI Approximator</a>
+                                <a href="projects/backtesting.html">Custom Backtesting Engine</a>
+                                <a href="projects/billing.html">Billing Data Prep</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <span class="dropdown-trigger">Life</span>
+                        <div class="dropdown-content">
+                            <div class="dropdown-bracket"></div>
+                            <div class="dropdown-links">
+                                <a href="life/gap-year.html">Gap Year</a>
+                                <a href="life/hobbies.html">Hobbies</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-content">
+                <h2>Projects</h2>
+
+                <div class="project">
+                    <h3>AIXI approximator</h3>
+                    <img src="../assets/images/aixi_project.jpg" alt="AIXI approximator project" class="project-image">
+                    <p>AIXI (Hutter 2005) is a formalization of a universal, ideal, and uncomputable agent. It maximizes a reward metric in an unknown environment. I asked: How many practical deviations from this ideal must be taken to achieve a functional agent?</p>
+
+                    <p>Keeping tabs on every deviation, I adapted AIXI to work through tasks using LLMs and a continuously updated model of its environment:</p>
+
+                    <p>A constitution serves as the agent's moral and productive guide. A judge evaluates each of the agent's actions against the constitution, and returns a detailed report. This is the reward percept.</p>
+
+                    <p>Tools are recast as "sub-environments:" self-manifested models of the true environment which are sampled to receive an observation.</p>
+
+                    <p>A key philosophy of this project is that the data flow is entirely text-based. No attempts are made to compress data into quantitative metrics: essays are low-density but high-fidelity, and attention mechanisms do a better job of picking out the meaningful stuff than I can. Optimization then becomes solely a compression challenge.</p>
+                </div>
+
+                <div class="project">
+                    <h3>Custom Backtesting Engine</h3>
+                    <img src="../assets/images/backtesting_project.jpg" alt="Custom Backtesting Engine project" class="project-image">
+                    <p>A simple backtesting engine on which I test predictive trading strategies. Pulls historical data from a variety of sources, and returns a variety of plots and stats in a cute little HTML report.</p>
+
+                    <p>Existing backtesting engines like LEAN aren't tailored to reporting the intrinsic metrics of ML models. For my workflow, I wanted to get feedback on both my Pytorch skills and my finance skills simultaneously.</p>
+                </div>
+
+                <div class="project">
+                    <h3>Billing Data Cleaner and Workspace</h3>
+                    <img src="../assets/images/billing_project.jpg" alt="Billing Data Cleaner project" class="project-image">
+                    <p>As an intern at OxBlue, I saw a problem: at the top of each month, senior accountants were spending a full day cleaning up malformed billing reports so that they could be uploaded to our accounting software. This was tedious, so I automated it.</p>
+
+                    <p>The program fixes the formulaic issues and flags data that needs human attention to resolve. Remaining data is organized into an Excel workspace with a macro-powered UI for easy processing.</p>
+
+                    <p>Uploading now takes one accountant a few hours at most, an estimated 70% reduction in effort.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <!-- JavaScript for dynamic dropdown -->
+    <script src="../assets/js/dropdown.js"></script>
+</body>
+</html>
