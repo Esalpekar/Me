@@ -6,7 +6,6 @@
     <title>AIXI Approximator - Elliott Salpekar</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
     
 </head>
@@ -55,24 +54,30 @@
                     <div class="content-text">
                         <p>AIXI (Hutter 2005) is a formalization of a universal, ideal, and uncomputable agent. It maximizes a reward metric in an unknown environment. I asked: How many practical deviations from this ideal must be taken to achieve a functional agent?</p>
 
+                        <p> This was a lesson in agent design. By replacing AIXI’s policy (which involves uncomputable Solomonoff induction) with LLM-based decision-making, you get a distilled framework for rational action that’s limited only by the LLM. </p>
+
                         <p>Keeping tabs on every deviation, I adapted AIXI to work through tasks using LLMs and a continuously updated model of its environment:</p>
 
                         <p>A constitution serves as the agent's moral and productive guide. A judge evaluates each of the agent's actions against the constitution, and returns a detailed report. This is the reward percept.</p>
 
                         <p>Tools are recast as "sub-environments:" self-manifested models of the true environment which are sampled to receive an observation.</p>
 
-                        <p>A key philosophy of this project is that the data flow is entirely text-based. No attempts are made to compress data into quantitative metrics: essays are low-density but high-fidelity, and attention mechanisms do a better job of picking out the meaningful stuff than I can. Optimization then becomes solely a compression challenge.</p>
+                        <p>A key philosophy of this project is that the data flow is entirely text-based. No attempts are made to compress data into quantitative metrics: essays are low-density but high-fidelity, and attention mechanisms do a decent job of picking out the meaningful stuff. To that extent, performance optimization then becomes mainly a compression challenge. </p>
                     </div>
 
                     <div class="content-images">
-                        <img src="../../assets/images/aixi_project.jpeg" alt="AIXI approximator project" class="project-image">
+                        <figure>
+                            <img src="../../assets/images/aixi_project.jpeg" alt="AIXI approximator project" class="project-image">
+                            <figcaption>
+                                <a href="https://github.com/Esalpekar/AIXI_Approximator" target="_blank" >Github link</a>
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- JavaScript for dynamic dropdown -->
     <script src="../../assets/js/dropdown.js"></script>
 </body>
 </html>

@@ -413,6 +413,37 @@ main {
     margin-bottom: 7px; /* Increased by 50% */
 }
 
+
+/* --- Image Caption Styles --- */
+
+.content-images figure {
+    margin: 0; /* Removes default figure margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the caption horizontally */
+}
+
+.content-images figcaption {
+    margin-top: 10px;  /* Adds 10px space below the image */
+    font-size: 13px;   /* Match navigation font size */
+    text-align: center; /* Center the caption */
+}
+
+.content-images figcaption a {
+    color: #222222;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.content-images figcaption a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
 /* Links */
 a {
     color: #222222;
